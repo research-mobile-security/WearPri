@@ -1,0 +1,3 @@
+Configuration config = Configuration.load(this);
+config.setAutoTrackSessions(false);
+Bugsnag.start(this, config);

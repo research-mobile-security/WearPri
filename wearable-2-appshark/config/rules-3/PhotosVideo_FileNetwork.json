@@ -1,0 +1,26 @@
+{
+  "PhotosVideo_FileNetwork": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "PhotosVideo_FileNetwork",
+      "detail": "Photos/videos leaking to File/Network/IPC",
+      "category": "ComplianceInfo",
+      "complianceCategory": "PhotosOrVideo",
+      "complianceCategoryDetail": "media",
+      "level": "L3"
+    },
+    "source": {
+      "Return": [
+        "<android.net.Uri: java.lang.String toString()>",
+        "<android.provider.MediaStore$Images$Media: android.net.Uri getContentUri(*)>"
+      ]
+    },
+    "sink": {
+      "<java.io.FileOutputStream: * <init>(*)>":                       { "TaintCheck": ["p*","@this"] },
+      "<okhttp3.Call: * enqueue(*)>":                                  { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.Intent: * putExtra(*)>":                       { "LibraryOnly": true, "TaintCheck": ["p*"] }
+    }
+  }
+}

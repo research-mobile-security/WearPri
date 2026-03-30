@@ -1,0 +1,18 @@
+<application>
+  <meta-data
+      android:name="io.repro.android.DeviceID.Mode"
+      android:value="ANDROID_ID_MD5"> 
+  </meta-data>
+</application>
+<application>
+  <meta-data
+      android:name="io.repro.android.DeviceID.Mode"
+      android:value="UUID"> 
+  </meta-data>
+</application>
+<application>
+  <meta-data
+      android:name="io.repro.android.DeviceID.Salt"
+      android:value="mysalt">
+  </meta-data>
+</application>

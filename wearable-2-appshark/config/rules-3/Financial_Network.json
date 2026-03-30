@@ -1,0 +1,26 @@
+{
+  "Financial_Network": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Financial_Network",
+      "detail": "Financial data (card/account/txn) leaking to Network/IPC/File",
+      "category": "ComplianceInfo",
+      "complianceCategory": "FinancialInfo",
+      "complianceCategoryDetail": "card/account/txn",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.widget.TextView: android.text.Editable getText()>",
+        "<android.database.Cursor: * getString(*)>"
+      ]
+    },
+    "sink": {
+      "<okhttp3.Call: * enqueue(*)>":                                  { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.Intent: * putExtra(*)>":                       { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<java.io.FileOutputStream: * <init>(*)>":                       { "TaintCheck": ["p*","@this"] }
+    }
+  }
+}

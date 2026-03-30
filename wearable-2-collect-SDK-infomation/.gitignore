@@ -1,0 +1,6 @@
+.env
+*.apk
+*.xapk
+*.json
+*.exe
+*.zip

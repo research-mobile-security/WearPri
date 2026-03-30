@@ -1,0 +1,86 @@
+{
+  "Messages_FullLeak": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Messages_FullLeak",
+      "detail": "Messages content (SMS/MMS/chat) leaking to File/Network/IPC/Log/SharedPreferences",
+      "category": "ComplianceInfo",
+      "complianceCategory": "Messages",
+      "complianceCategoryDetail": "sms/mms/chat",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.database.Cursor: * getString(*)>",
+        "<android.provider.Telephony$Sms$Inbox: android.net.Uri CONTENT_URI>",
+        "<android.provider.Telephony$Mms$Inbox: android.net.Uri CONTENT_URI>",
+        "<android.provider.Telephony$Sms: android.net.Uri CONTENT_URI>",
+        "<android.provider.Telephony$Mms: android.net.Uri CONTENT_URI>"
+      ],
+      "Field": [
+        "<android.provider.Telephony$Sms: android.net.Uri CONTENT_URI>",
+        "<android.provider.Telephony$Mms: android.net.Uri CONTENT_URI>"
+      ]
+    },
+    "sink": {
+      "<java.io.FileOutputStream: * <init>(*)>": {
+        "TaintCheck": ["p*","@this"]
+      },
+      "<java.io.FileOutputStream: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<java.io.FileWriter: * <init>(*)>": {
+        "TaintCheck": ["p*"]
+      },
+      "<java.io.FileWriter: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.SharedPreferences$Editor: * putString(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.webkit.WebView: * loadUrl(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String"],
+        "TaintCheck": ["p*"]
+      },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<okhttp3.Call: * enqueue(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["okhttp3.Callback"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.Intent: * putExtra(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String",
+          "android.os.Parcelable",
+          "java.io.Serializable",
+          "android.os.Bundle"
+        ],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.ContentResolver: * insert(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.ContentResolver: * update(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      }
+    }
+  }
+}

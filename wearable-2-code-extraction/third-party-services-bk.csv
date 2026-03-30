@@ -1,0 +1,45 @@
+﻿id,third_party,manifest,source_code,stop_share,link
+1,Firebase Cloud Messaging (FCM),yes,yes,yes,https://firebase.google.com/docs/cloud-messaging/android/client?hl=en#prevent-auto-init
+2,Facebook SDK,yes,yes ,yes,https://developers.facebook.com/docs/app-events/gdpr-compliance/
+3,CleverTap Android SDK,yes,yes ,yes,https://developer.clevertap.com/docs/sdk-changes-for-gdpr-compliance
+4,Zendesk SDK,no,no,no,https://developer.zendesk.com/documentation/
+5,Yandex AppMetrica,no,no,no,https://appmetrica.yandex.com/docs/en/data-security/gdpr
+6,AppLovin SDK,no,yes,no,https://developers.applovin.com/en/max/android/overview/privacy/
+7,Huawei SDK,no,no,no,https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-apm-android-sdksecurity-0000001053087275
+8,kochava,no,yes,yes,https://support.kochava.com/sdk-integration/android-sdk-integration/android-using-the-sdk/
+9,flurry,no,no,no,https://www.flurry.com/ccpa-compliance-guide/
+10,Braze SDK,yes,yes,yes,https://www.braze.com/docs/developer_guide/sdk_integration
+11,sentry sdk,yes,yes,yes,"https://docs.sentry.io/platforms/android/configuration/options/
+'https://docs.sentry.io/platforms/android/data-management/sensitive-data/"
+12,appsflyer,no,yes,yes,https://dev.appsflyer.com/hc/docs/preserve-user-privacy-android
+13,Vungle sdk ,no,yes,yes,https://support.vungle.com/hc/en-us/articles/360047780372-Advanced-Settings#ccpa-implementation-0-9
+14,Baidu Location SDK,yes,yes,yes,https://lbsyun.baidu.com/faq/api?title=android-privacy
+15,Urban Airship SDK,no,yes,yes,"https://docs.airship.com/platform/mobile/data-collection/data-collection/?groupid=android-kotlin
+'https://docs.airship.com/reference/libraries/android/latest/reference/com/urbanairship/PrivacyManager.html"
+16,Branch SDK,yes,yes,yes,https://help.branch.io/developers-hub/docs/consumer-protection-preferences
+17,ironsource sdk,no,yes,yes,https://developers.is.com/ironsource-mobile/android/regulation-advanced-settings/#step-1
+18,Picasso,no,no,no,https://square.github.io/picasso/#introduction
+19,Ogury SDK,no,yes,yes,https://support.ogury.com/android/privacy/privacy-compliance
+20,Amap SDK,no,no,no,https://s3-smartwear.tozostore.com/web_page/AMAP_privacy_policy_en.html
+21,Sensors Analytics SDK,no,no,no,https://www.sensorsdata.cn/2.0/manual/android_sdk.html
+22,Intercom Android SDK,no,no,no,https://developers.intercom.com/installing-intercom/android/about-the-sdk
+23,Pangle (Bytedance Ads) SDK,no,no,no,https://www.pangleglobal.com/integration/app-privacy-details-gp
+24,Tencent Youlianghui (GDT) Advertising SDK,no,no,no,https://developers.adnet.qq.com/doc/android/union/union_embed
+25,iguang (JPush) Advertising SDK ,no,no,no,https://docs.jiguang.cn/en/jpush/client/Android/android_sdk/
+26,Salesforce's Embedded Service SDK,yes,yes,no,https://developer.salesforce.com/docs/atlas.en-us.service_sdk_android.meta/service_sdk_android/servicesdk_android_dev_guide.htm
+27,moengage,no,yes,yes,https://developers.moengage.com/hc/en-us/articles/4403894239892-Compliance
+28,expo,no,no,no,https://docs.expo.dev/guides/permissions/
+29,Razorpay Android SDK,no,no,no,https://razorpay.com/docs/payments/payment-gateway/android-integration/standard/google-data-safety/
+30,getstream,no,no,no,https://getstream.io/chat/docs/android/gdpr/
+31,mapbox,no,no,no,https://www.mapbox.com/legal/privacy
+32,Transistorsoft ,no,no,no,https://transistorsoft.github.io/cordova-background-geolocation-lt/
+33,Instabug,no,yes,yes,https://docs.instabug.com/docs/gdpr
+34,zoho salesiq,no,no,no,https://www.zoho.com/salesiq/help/developer-guides/android-mobile-sdk-installation-2.0.html
+35,Zoom,no,no,no,https://www.zoom.com/en/trust/privacy/
+36,Pushwoosh,no,yes,yes,https://github.com/Pushwoosh/pushwoosh-android-sdk/blob/master/Documentation/GDPRManager.md
+37,Bugsnag android SDK,yes,yes,yes,https://docs.bugsnag.com/platforms/android/configuration-options/#autotracksessions
+38,OneSignal,no,yes,yes,https://documentation.onesignal.com/docs/handling-personal-data
+39,Shakebugs,no,yes,yes,https://docs.shakebugs.com/docs/android/configuration-and-data/manage-sensitive-data/
+40,Adjoe,no,no,no,https://docs.adjoe.io/adjoe-sdk/android/playtime-sdk-for-android/faq
+41,Smaato,no,yes,yes,https://developers.smaato.com/publishers/android-nextgen-sdk-integration/#NextGenSDK|Android|Smaatoasprimary-ImportantDetailsAboutLGPDUserConsent
+42,stripe,no,no,no,https://docs.stripe.com/sdks/android

@@ -1,0 +1,7 @@
+{
+  "apkPath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/app-standalone/com.fish4fun.mycards.apk",
+  "out": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/appshark-output/app-standalone/com.fish4fun.mycards.apk",
+  "rulePath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/config/rules-2",
+  "logLevel": 1,
+  "javaSource": true
+}

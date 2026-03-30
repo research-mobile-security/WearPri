@@ -1,0 +1,28 @@
+{
+  "HealthFitness_Network": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "HealthFitness_Network",
+      "detail": "Health/Fitness data leaking to Network/IPC/File",
+      "category": "ComplianceInfo",
+      "complianceCategory": "HealthFitness",
+      "complianceCategoryDetail": "heart rate/steps/etc.",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.hardware.SensorEvent: float[] values>",
+        "<androidx.health.connect.client.records.HeartRateRecord: *>",
+        "<androidx.health.connect.client.records.StepsRecord: *>"
+      ]
+    },
+    "sink": {
+      "<android.util.Log: int *(java.lang.String,java.lang.String)>": { "LibraryOnly": true, "TaintCheck": ["p1"] },
+      "<okhttp3.Call: * enqueue(*)>":                                  { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.Intent: * putExtra(*)>":                       { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<java.io.FileOutputStream: * <init>(*)>":                       { "TaintCheck": ["p*","@this"] }
+    }
+  }
+}

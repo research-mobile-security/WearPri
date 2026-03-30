@@ -1,0 +1,31 @@
+{
+  "Location_NetworkExternal": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Location_NetworkExternal",
+      "detail": "Location leaking to Network/IPC/File",
+      "category": "ComplianceInfo",
+      "complianceCategory": "Location",
+      "complianceCategoryDetail": "lat/lon/alt",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.location.Location: double getLatitude()>",
+        "<android.location.Location: double getLongitude()>",
+        "<android.location.Location: double getAltitude()>",
+        "<android.location.LocationManager: android.location.Location getLastKnownLocation(java.lang.String)>"
+      ]
+    },
+    "sink": {
+      "<android.util.Log: int *(java.lang.String,java.lang.String)>": { "LibraryOnly": true, "TaintCheck": ["p1"] },
+      "<android.webkit.WebView: * loadUrl(*)>":                        { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<okhttp3.Call: * enqueue(*)>":                                  { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<*: * sendBroadcast*(*)>":                                      { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.Intent: * putExtra(*)>":                       { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<java.io.FileOutputStream: * <init>(*)>":                       { "TaintCheck": ["p*","@this"] }
+    }
+  }
+}

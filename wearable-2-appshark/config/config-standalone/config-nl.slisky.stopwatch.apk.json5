@@ -1,0 +1,7 @@
+{
+  "apkPath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/app-standalone/nl.slisky.stopwatch.apk",
+  "out": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/appshark-output/app-standalone/nl.slisky.stopwatch.apk",
+  "rulePath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/config/rules-2",
+  "logLevel": 1,
+  "javaSource": true
+}

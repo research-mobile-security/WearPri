@@ -1,0 +1,102 @@
+{
+  "DeviceID_LogNetwork": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "DeviceID_LogNetwork",
+      "detail": "Device IDs leaking to Log/Network",
+      "category": "ComplianceInfo",
+      "complianceCategory": "DeviceID",
+      "complianceCategoryDetail": "Log/Network",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.net.wifi.WifiInfo: * getMacAddress()>",
+        "<android.provider.Settings$Secure: * getString(*)>",
+        "<android.telephony.TelephonyManager: * getDeviceId(*)>",
+        "<android.telephony.TelephonyManager: * getImei(*)>",
+        "<android.telephony.TelephonyManager: * getSubscriberId(*)>",
+        "<com.google.android.gms.ads.identifier.AdvertisingIdClient: * getAdvertisingIdInfo(*)>",
+        "<com.google.firebase.installations.FirebaseInstallations: * getId()>"
+      ]
+    },
+    "sink": {
+      "<android.util.Log: int d(java.lang.String,java.lang.String)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String"
+        ],
+        "TaintCheck": [
+          "p1"
+        ]
+      },
+      "<android.util.Log: int i(java.lang.String,java.lang.String)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String"
+        ],
+        "TaintCheck": [
+          "p1"
+        ]
+      },
+      "<android.util.Log: int e(java.lang.String,java.lang.String)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String"
+        ],
+        "TaintCheck": [
+          "p1"
+        ]
+      },
+      "<android.webkit.WebView: * loadUrl(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<okhttp3.Call: * enqueue(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "okhttp3.Callback"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<*: * sendBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "android.content.Intent",
+          "android.content.Intent[]"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<*: * sendOrderedBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "android.content.Intent",
+          "android.content.Intent[]"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      }
+    }
+  }
+}

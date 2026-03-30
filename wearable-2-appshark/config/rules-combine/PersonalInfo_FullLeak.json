@@ -1,0 +1,95 @@
+{
+  "PersonalInfo_FullLeak": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "PersonalInfo_FullLeak",
+      "detail": "Personal information leaking to Network/IPC/Log/File/SharedPreferences",
+      "category": "ComplianceInfo",
+      "complianceCategory": "PersonalInfo",
+      "complianceCategoryDetail": "username/password/email/system-ids/etc.",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.widget.TextView: android.text.Editable getText()>",
+        "<android.widget.EditText: android.text.Editable getText()>",
+        "<android.accounts.Account: java.lang.String name()>",
+        "<android.accounts.AccountManager: * getAccounts(*)>",
+        "<android.content.SharedPreferences: * getString(*)>",
+        "<android.telephony.TelephonyManager: * getLine1Number(*)>"
+      ]
+    },
+    "sink": {
+      "<android.util.Log: int *(java.lang.String,java.lang.String)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String", "java.lang.String"],
+        "TaintCheck": ["p1"]
+      },
+      "<android.webkit.WebView: * loadUrl(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String"],
+        "TaintCheck": ["p*"]
+      },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<okhttp3.Call: * enqueue(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["okhttp3.Callback"],
+        "TaintCheck": ["p*"]
+      },
+      "<okhttp3.Call: * execute()>": {
+        "LibraryOnly": true,
+        "TaintCheck": ["@this"]
+      },
+      "<android.content.Intent: * putExtra(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String", "android.os.Parcelable", "java.io.Serializable", "android.os.Bundle"],
+        "TaintCheck": ["p*"]
+      },
+      "<*: * sendBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["android.content.Intent", "android.content.Intent[]", "*"],
+        "TaintCheck": ["p*"]
+      },
+      "<*: * sendOrderedBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["android.content.Intent", "android.content.Intent[]", "*"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.ContentResolver: * insert(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.ContentResolver: * update(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<java.io.FileOutputStream: * <init>(*)>": {
+        "TaintParamType": ["java.io.File", "*"],
+        "TaintCheck": ["p*", "@this"]
+      },
+      "<java.io.FileOutputStream: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<java.io.FileWriter: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.SharedPreferences$Editor: * putString(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String", "*"],
+        "TaintCheck": ["p*"]
+      }
+    }
+  }
+}

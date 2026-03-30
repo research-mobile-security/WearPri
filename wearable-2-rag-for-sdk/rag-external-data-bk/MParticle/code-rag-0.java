@@ -1,0 +1,1 @@
+MParticle.getInstance().setOptOut(true);

@@ -1,0 +1,78 @@
+{
+  "WebBrowsing_Network": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "WebBrowsing_Network",
+      "detail": "Web browsing data leaking to Network/File",
+      "category": "ComplianceInfo",
+      "complianceCategory": "WebBrowsing",
+      "complianceCategoryDetail": "Network/File",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.webkit.CookieManager: java.lang.String getCookie(*)>",
+        "<android.webkit.WebView: java.lang.String getTitle()>",
+        "<android.webkit.WebView: java.lang.String getUrl()>"
+      ]
+    },
+    "sink": {
+      "<android.webkit.WebView: * loadUrl(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<okhttp3.Call: * enqueue(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "okhttp3.Callback"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<java.io.FileOutputStream: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<java.io.FileWriter: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<android.content.SharedPreferences$Editor: * putString(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      }
+    }
+  }
+}

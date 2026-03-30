@@ -1,0 +1,7 @@
+{
+  "apkPath": "F:/wearable-2-appshark/wearable-app/coach.zing.fitness.apk",
+  "out": "F:/wearable-2-appshark/appshark-output/app-non-standalone/coach.zing.fitness.apk",
+  "rulePath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/config/rules-2",
+  "logLevel": 1,
+  "javaSource": true
+}

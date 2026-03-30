@@ -1,0 +1,7 @@
+{
+  "apkPath": "F:/wearable-2-appshark/wearable-app/com.acmeaom.android.myradar.apk",
+  "out": "F:/wearable-2-appshark/appshark-output/app-non-standalone/com.acmeaom.android.myradar.apk",
+  "rulePath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/config/rules-2",
+  "logLevel": 1,
+  "javaSource": true
+}

@@ -1,0 +1,7 @@
+{
+  "apkPath": "F:/wearable-2-appshark/wearable-app/app.EnForma.fitcoapp.net.apk",
+  "out": "F:/wearable-2-appshark/appshark-output/app-non-standalone/app.EnForma.fitcoapp.net.apk",
+  "rulePath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/config/rules-2",
+  "logLevel": 1,
+  "javaSource": true
+}

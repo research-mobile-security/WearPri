@@ -1,0 +1,7 @@
+{
+  "apkPath": "F:/wearable-2-appshark/wearable-app/de.myfitcoach.tim.mfc.apk",
+  "out": "F:/wearable-2-appshark/appshark-output/app-non-standalone/de.myfitcoach.tim.mfc.apk",
+  "rulePath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/config/rules-2",
+  "logLevel": 1,
+  "javaSource": true
+}

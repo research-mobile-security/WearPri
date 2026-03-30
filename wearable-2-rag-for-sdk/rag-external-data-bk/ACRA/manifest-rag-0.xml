@@ -1,0 +1,13 @@
+<manifest>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+</manifest>
+<CheckBoxPreference android:key="acra.disable"
+    android:title="@string/pref_disable_acra"
+    android:summaryOn="@string/pref_acra_disabled"
+    android:summaryOff="@string/pref_acra_enabled"
+    android:defaultValue="false"/>
+<CheckBoxPreference android:key="acra.deviceid.enable"
+    android:title="@string/pref_acra_deviceid"
+    android:summaryOn="@string/pref_acra_deviceid_enabled"
+    android:summaryOff="@string/pref_acra_deviceid_disabled" 
+    android:defaultValue="true"/>

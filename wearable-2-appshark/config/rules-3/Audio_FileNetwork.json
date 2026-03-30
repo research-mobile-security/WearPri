@@ -1,0 +1,25 @@
+{
+  "Audio_FileNetwork": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Audio_FileNetwork",
+      "detail": "Audio files leaking to File/Network/IPC",
+      "category": "ComplianceInfo",
+      "complianceCategory": "AudioFiles",
+      "complianceCategoryDetail": "audio",
+      "level": "L3"
+    },
+    "source": {
+      "Return": [
+        "<android.media.AudioRecord: int read(*)>",
+        "<android.media.MediaRecorder: * *(*)>"
+      ]
+    },
+    "sink": {
+      "<java.io.FileOutputStream: * <init>(*)>": { "TaintCheck": ["p*","@this"] },
+      "<okhttp3.Call: * enqueue(*)>":            { "LibraryOnly": true, "TaintCheck": ["p*"] }
+    }
+  }
+}

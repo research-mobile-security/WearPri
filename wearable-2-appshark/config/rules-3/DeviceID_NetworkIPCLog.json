@@ -1,0 +1,41 @@
+{
+  "DeviceID_NetworkIPCLog": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "DeviceID_NetworkIPCLog",
+      "detail": "Device IDs leaking to Network/IPC/Log/File",
+      "category": "ComplianceInfo",
+      "complianceCategory": "DeviceID",
+      "complianceCategoryDetail": "Network/IPC/Log/File",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.telephony.TelephonyManager: * getDeviceId(*)>",
+        "<android.telephony.TelephonyManager: * getImei(*)>",
+        "<android.telephony.TelephonyManager: * getMeid(*)>",
+        "<android.telephony.TelephonyManager: * getSubscriberId(*)>",
+        "<android.provider.Settings$Secure: * getString(*)>",
+        "<android.net.wifi.WifiInfo: * getMacAddress()>",
+        "<com.google.android.gms.ads.identifier.AdvertisingIdClient$Info: java.lang.String getId()>",
+        "<com.google.firebase.installations.FirebaseInstallations: * getId()>"
+      ]
+    },
+    "sink": {
+      "<android.util.Log: int *(java.lang.String,java.lang.String)>": { "LibraryOnly": true, "TaintCheck": ["p1"] },
+      "<android.webkit.WebView: * loadUrl(*)>":                            { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>":     { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<okhttp3.Call: * enqueue(*)>":                                      { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<okhttp3.Call: * execute()>":                                       { "LibraryOnly": true, "TaintCheck": ["@this"] },
+      "<android.content.Intent: * putExtra(*)>":                           { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<*: * sendBroadcast*(*)>":                                          { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<*: * sendOrderedBroadcast*(*)>":                                   { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.ContentResolver: * insert(*)>":                    { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.ContentResolver: * update(*)>":                    { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<java.io.FileOutputStream: * <init>(*)>":                           { "TaintCheck": ["p*","@this"] },
+      "<java.io.FileWriter: * <init>(*)>":                                 { "TaintCheck": ["p*"] }
+    }
+  }
+}

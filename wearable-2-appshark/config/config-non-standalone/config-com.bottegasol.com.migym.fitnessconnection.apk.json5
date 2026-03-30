@@ -1,0 +1,7 @@
+{
+  "apkPath": "F:/wearable-2-appshark/wearable-app/com.bottegasol.com.migym.fitnessconnection.apk",
+  "out": "F:/wearable-2-appshark/appshark-output/app-non-standalone/com.bottegasol.com.migym.fitnessconnection.apk",
+  "rulePath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/config/rules-2",
+  "logLevel": 1,
+  "javaSource": true
+}

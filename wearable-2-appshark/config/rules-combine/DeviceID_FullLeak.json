@@ -1,0 +1,107 @@
+{
+  "DeviceID_FullLeak": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "DeviceID_FullLeak",
+      "detail": "Device identifiers leaking to Network/IPC/Log/File",
+      "category": "ComplianceInfo",
+      "complianceCategory": "DeviceID",
+      "complianceCategoryDetail": "IMEI/MEID/IMSI/ANDROID_ID/MAC/AAID/Firebase IID",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.telephony.TelephonyManager: * getDeviceId(*)>",
+        "<android.telephony.TelephonyManager: * getImei(*)>",
+        "<android.telephony.TelephonyManager: * getMeid(*)>",
+        "<android.telephony.TelephonyManager: * getSubscriberId(*)>",
+        "<android.provider.Settings$Secure: * getString(*)>",
+        "<android.net.wifi.WifiInfo: * getMacAddress()>",
+        "<com.google.android.gms.ads.identifier.AdvertisingIdClient: * getAdvertisingIdInfo(*)>",
+        "<com.google.android.gms.ads.identifier.AdvertisingIdClient$Info: java.lang.String getId()>",
+        "<com.google.firebase.installations.FirebaseInstallations: * getId()>"
+      ]
+    },
+    "sink": {
+      "<android.util.Log: int *(java.lang.String,java.lang.String)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String","java.lang.String"],
+        "TaintCheck": ["p1"]
+      },
+
+      "<android.webkit.WebView: * loadUrl(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String"],
+        "TaintCheck": ["p*"]
+      },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<okhttp3.Call: * enqueue(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["okhttp3.Callback"],
+        "TaintCheck": ["p*"]
+      },
+      "<okhttp3.Call: * execute()>": {
+        "LibraryOnly": true,
+        "TaintCheck": ["@this"]
+      },
+
+      "<android.content.Intent: * putExtra(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String",
+          "android.os.Parcelable",
+          "java.io.Serializable",
+          "android.os.Bundle",
+          "java.lang.String[]",
+          "byte[]"
+        ],
+        "TaintCheck": ["p*"]
+      },
+      "<*: * sendBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["android.content.Intent","android.content.Intent[]","*"],
+        "TaintCheck": ["p*"]
+      },
+      "<*: * sendOrderedBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["android.content.Intent","android.content.Intent[]","*"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.ContentResolver: * insert(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.ContentResolver: * update(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+
+      "<java.io.FileOutputStream: * <init>(*)>": {
+        "TaintParamType": ["java.io.File","*"],
+        "TaintCheck": ["p*","@this"]
+      },
+      "<java.io.FileOutputStream: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<java.io.FileWriter: * <init>(*)>": {
+        "TaintParamType": ["java.io.File","*"],
+        "TaintCheck": ["p*"]
+      },
+      "<java.io.FileWriter: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      }
+    }
+  }
+}

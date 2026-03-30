@@ -1,0 +1,27 @@
+{
+  "Contacts_IPCNetwork": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Contacts_IPCNetwork",
+      "detail": "Contacts leaking to IPC/Network",
+      "category": "ComplianceInfo",
+      "complianceCategory": "Contacts",
+      "complianceCategoryDetail": "name/phone/email",
+      "level": "L4"
+    },
+    "source": {
+      "Field": [
+        "<android.provider.ContactsContract$Contacts: android.net.Uri CONTENT_URI>"
+      ],
+      "Return": [
+        "<android.database.Cursor: * getString(*)>"
+      ]
+    },
+    "sink": {
+      "<android.content.Intent: * putExtra(*)>": { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<okhttp3.Call: * enqueue(*)>":            { "LibraryOnly": true, "TaintCheck": ["p*"] }
+    }
+  }
+}

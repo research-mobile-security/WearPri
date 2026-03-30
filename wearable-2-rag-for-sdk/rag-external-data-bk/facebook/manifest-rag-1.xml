@@ -1,0 +1,4 @@
+<application>
+  <meta-data android:name="com.facebook.sdk.AutoInitEnabled"
+           android:value="false"/>
+</application>

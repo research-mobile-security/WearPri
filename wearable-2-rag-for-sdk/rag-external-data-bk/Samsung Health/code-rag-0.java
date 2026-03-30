@@ -1,0 +1,3 @@
+HealthDataResolver.insertWithPermission()
+HealthDataResolver.readWithPermission()
+HealthDataResolver.deleteWithPermission()

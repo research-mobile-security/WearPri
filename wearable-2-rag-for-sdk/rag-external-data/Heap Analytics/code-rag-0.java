@@ -1,0 +1,6 @@
+android {  
+  ...
+  heap {  
+    enabled = false  
+  }  
+}

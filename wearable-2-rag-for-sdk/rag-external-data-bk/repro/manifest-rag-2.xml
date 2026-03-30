@@ -1,0 +1,9 @@
+<manifest>
+    <application>
+        <meta-data
+            android:name="io.repro.android.AAIDCollectionEnabled"
+            android:value="true">
+        </meta-data>
+        ...
+    </application>
+</manifest>

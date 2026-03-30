@@ -1,0 +1,1 @@
+UAirship.shared().getPrivacyManager().enable(PrivacyManager.Feature.PUSH, PrivacyManager.Feature.ANALYTICS);

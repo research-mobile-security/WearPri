@@ -1,0 +1,419 @@
+{
+  "rules": [
+    {
+      "id": "CAT1_DeviceIDs",
+      "category": "Device or other IDs",
+      "sources": [
+        "Landroid/net/wifi/WifiInfo;->getMacAddress()Ljava/lang/String;",
+        "Landroid/provider/Settings$Secure;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;",
+        "Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;",
+        "Landroid/telephony/TelephonyManager;->getImei()Ljava/lang/String;",
+        "Landroid/telephony/TelephonyManager;->getSubscriberId()Ljava/lang/String;",
+        "Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->getAdvertisingIdInfo(Landroid/content/Context;)Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;",
+        "Lcom/google/firebase/installations/FirebaseInstallations;->getId()Lcom/google/android/gms/tasks/Task;",
+        "Ljava/net/InetAddress;->getHostAddress()Ljava/lang/String;"
+      ],
+      "sinks": [
+        "Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V",
+        "Landroid/bluetooth/BluetoothSocket;->getOutputStream()Ljava/io/OutputStream;",
+        "Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
+        "Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+        "Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V",
+        "Landroid/content/Context;->startActivity(Landroid/content/Intent;)V",
+        "Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/hardware/usb/UsbDeviceConnection;->bulkTransfer(Landroid/hardware/usb/UsbEndpoint;[BIII)I",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT2_PersonalInfo",
+      "category": "Personal info",
+      "sources": [
+        "Landroid/accounts/AccountManager;->getAccounts()[Landroid/accounts/Account;",
+        "Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+        "Landroid/provider/ContactsContract$Profile;->CONTENT_URI:Landroid/net/Uri;",
+        "Landroid/telephony/TelephonyManager;->getLine1Number()Ljava/lang/String;"
+      ],
+      "sinks": [
+        "Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V",
+        "Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
+        "Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+        "Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT3_Location",
+      "category": "Location",
+      "sources": [
+        "Landroid/location/Location;->getAltitude()D",
+        "Landroid/location/Location;->getLatitude()D",
+        "Landroid/location/Location;->getLongitude()D",
+        "Landroid/location/LocationManager;->getLastKnownLocation(Ljava/lang/String;)Landroid/location/Location;",
+        "Lcom/google/android/gms/location/FusedLocationProviderClient;->getLastLocation()Lcom/google/android/gms/tasks/Task;"
+      ],
+      "sinks": [
+        "Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V",
+        "Landroid/bluetooth/BluetoothSocket;->getOutputStream()Ljava/io/OutputStream;",
+        "Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
+        "Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+        "Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V",
+        "Landroid/content/Context;->startActivity(Landroid/content/Intent;)V",
+        "Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/hardware/usb/UsbDeviceConnection;->bulkTransfer(Landroid/hardware/usb/UsbEndpoint;[BIII)I",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT4_HealthFitness",
+      "category": "Health & fitness",
+      "sources": [
+        "Landroid/hardware/SensorEvent;->values:[F",
+        "Lcom/google/android/gms/fitness/HistoryClient;->readData(Lcom/google/android/gms/fitness/request/DataReadRequest;)Lcom/google/android/gms/tasks/Task;"
+      ],
+      "sinks": [
+        "Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V",
+        "Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
+        "Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+        "Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT5_AppInfoPerf",
+      "category": "App info & performance",
+      "sources": [
+        "Landroid/app/ActivityManager;->getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V",
+        "Landroid/os/Debug;->getNativeHeapAllocatedSize()J",
+        "Landroid/util/Log;->getStackTraceString(Ljava/lang/Throwable;)Ljava/lang/String;"
+      ],
+      "sinks": [
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT6_Messages",
+      "category": "Messages",
+      "sources": [
+        "Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+        "Landroid/provider/Telephony$Mms$Inbox;->CONTENT_URI:Landroid/net/Uri;",
+        "Landroid/provider/Telephony$Sms$Inbox;->CONTENT_URI:Landroid/net/Uri;",
+        "Landroid/provider/Telephony$TextBasedSmsColumns;->BODY:Ljava/lang/String;"
+      ],
+      "sinks": [
+        "Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V",
+        "Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
+        "Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+        "Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT7_Financial",
+      "category": "Financial info",
+      "sources": [
+        "Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;",
+        "Landroid/webkit/WebView;->getOriginalUrl()Ljava/lang/String;"
+      ],
+      "sinks": [
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT8_PhotosVideo",
+      "category": "Photos or video",
+      "sources": [
+        "Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+        "Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;",
+        "Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;"
+      ],
+      "sinks": [
+        "Landroid/bluetooth/BluetoothSocket;->getOutputStream()Ljava/io/OutputStream;",
+        "Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V",
+        "Landroid/content/Context;->startActivity(Landroid/content/Intent;)V",
+        "Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/hardware/usb/UsbDeviceConnection;->bulkTransfer(Landroid/hardware/usb/UsbEndpoint;[BIII)I",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT9_Audio",
+      "category": "Audio files",
+      "sources": [
+        "Landroid/media/MediaRecorder;->getMaxAmplitude()I",
+        "Landroid/provider/MediaStore$Audio$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;"
+      ],
+      "sinks": [
+        "Landroid/bluetooth/BluetoothSocket;->getOutputStream()Ljava/io/OutputStream;",
+        "Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V",
+        "Landroid/content/Context;->startActivity(Landroid/content/Intent;)V",
+        "Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/hardware/usb/UsbDeviceConnection;->bulkTransfer(Landroid/hardware/usb/UsbEndpoint;[BIII)I",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT10_FilesDocs",
+      "category": "Files and docs",
+      "sources": [
+        "Landroid/content/ContentResolver;->openInputStream(Landroid/net/Uri;)Ljava/io/InputStream;",
+        "Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;",
+        "Ljava/io/FileInputStream;->read([B)I"
+      ],
+      "sinks": [
+        "Landroid/bluetooth/BluetoothSocket;->getOutputStream()Ljava/io/OutputStream;",
+        "Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V",
+        "Landroid/content/Context;->startActivity(Landroid/content/Intent;)V",
+        "Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/hardware/usb/UsbDeviceConnection;->bulkTransfer(Landroid/hardware/usb/UsbEndpoint;[BIII)I",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT11_Calendar",
+      "category": "Calendar",
+      "sources": [
+        "Landroid/provider/CalendarContract$Events;->CONTENT_URI:Landroid/net/Uri;",
+        "Landroid/provider/CalendarContract$Reminders;->CONTENT_URI:Landroid/net/Uri;"
+      ],
+      "sinks": [
+        "Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V",
+        "Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
+        "Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+        "Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT12_Contacts",
+      "category": "Contacts",
+      "sources": [
+        "Landroid/provider/CallLog$Calls;->CONTENT_URI:Landroid/net/Uri;",
+        "Landroid/provider/ContactsContract$Contacts;->CONTENT_URI:Landroid/net/Uri;",
+        "Landroid/telephony/TelephonyManager;->getCallState()I"
+      ],
+      "sinks": [
+        "Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V",
+        "Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
+        "Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+        "Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;",
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Landroidx/localbroadcastmanager/content/LocalBroadcastManager;->sendBroadcast(Landroid/content/Intent;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT13_AppActivity",
+      "category": "App activity",
+      "sources": [
+        "Landroid/app/SearchManager;->getSearchableInfo(Landroid/content/ComponentName;)Landroid/app/SearchableInfo;",
+        "Landroid/app/UsageStatsManager;->queryUsageStats(IIJ)Ljava/util/List;",
+        "Landroid/content/pm/PackageManager;->getInstalledPackages(I)Ljava/util/List;"
+      ],
+      "sinks": [
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    },
+    {
+      "id": "CAT14_WebBrowsing",
+      "category": "Web browsing",
+      "sources": [
+        "Landroid/webkit/CookieManager;->getCookie(Ljava/lang/String;)Ljava/lang/String;",
+        "Landroid/webkit/WebView;->getTitle()Ljava/lang/String;",
+        "Landroid/webkit/WebView;->getUrl()Ljava/lang/String;"
+      ],
+      "sinks": [
+        "Landroid/content/SharedPreferences$Editor;->apply()V",
+        "Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;",
+        "Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;",
+        "Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I",
+        "Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V",
+        "Ljava/io/FileOutputStream;->write([B)V",
+        "Ljava/io/FileWriter;->write(Ljava/lang/String;)V",
+        "Ljava/io/RandomAccessFile;->write([B)V",
+        "Ljava/net/URL;->openConnection()Ljava/net/URLConnection;",
+        "Lokhttp3/Call;->enqueue(Lokhttp3/Callback;)V",
+        "Lokhttp3/OkHttpClient;->newCall(Lokhttp3/Request;)Lokhttp3/Call;",
+        "Lorg/apache/http/impl/client/DefaultHttpClient;->execute(Lorg/apache/http/client/methods/HttpUriRequest;)Lorg/apache/http/HttpResponse;"
+      ]
+    }
+  ]
+}

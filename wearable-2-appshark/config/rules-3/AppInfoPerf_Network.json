@@ -1,0 +1,27 @@
+{
+  "AppInfoPerf_Network": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "AppInfoPerf_Network",
+      "detail": "Crash/app logs/CPU/RAM/battery leaking to Network/IPC/Log",
+      "category": "ComplianceInfo",
+      "complianceCategory": "AppInfoPerformance",
+      "complianceCategoryDetail": "logs, stats",
+      "level": "L3"
+    },
+    "source": {
+      "Return": [
+        "<android.os.Debug: * dumpHprofData(*)>",
+        "<android.app.ActivityManager: * getRunningAppProcesses()>",
+        "<android.app.ActivityManager: * getMemoryInfo(*)>"
+      ]
+    },
+    "sink": {
+      "<android.util.Log: int *(java.lang.String,java.lang.String)>": { "LibraryOnly": true, "TaintCheck": ["p1"] },
+      "<okhttp3.Call: * enqueue(*)>":                                  { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.Intent: * putExtra(*)>":                       { "LibraryOnly": true, "TaintCheck": ["p*"] }
+    }
+  }
+}

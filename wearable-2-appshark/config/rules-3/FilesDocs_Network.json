@@ -1,0 +1,25 @@
+{
+  "FilesDocs_Network": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "FilesDocs_Network",
+      "detail": "Files/documents leaking to Network/IPC",
+      "category": "ComplianceInfo",
+      "complianceCategory": "FilesAndDocs",
+      "complianceCategoryDetail": "docs",
+      "level": "L3"
+    },
+    "source": {
+      "Return": [
+        "<java.io.File: java.lang.String getPath()>",
+        "<android.net.Uri: java.lang.String toString()>"
+      ]
+    },
+    "sink": {
+      "<okhttp3.Call: * enqueue(*)>":          { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.Intent: * putExtra(*)>": { "LibraryOnly": true, "TaintCheck": ["p*"] }
+    }
+  }
+}

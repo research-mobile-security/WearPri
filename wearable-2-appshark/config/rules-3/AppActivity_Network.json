@@ -1,0 +1,25 @@
+{
+  "AppActivity_Network": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "AppActivity_Network",
+      "detail": "In-app interactions/history leaking to Network/IPC",
+      "category": "ComplianceInfo",
+      "complianceCategory": "AppActivity",
+      "complianceCategoryDetail": "interactions/search history",
+      "level": "L2"
+    },
+    "source": {
+      "Return": [
+        "<android.app.SearchManager: * getSearchableInfo(*)>",
+        "<android.app.ActivityManager: * getRecentTasks(*)>"
+      ]
+    },
+    "sink": {
+      "<okhttp3.Call: * enqueue(*)>":            { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.Intent: * putExtra(*)>": { "LibraryOnly": true, "TaintCheck": ["p*"] }
+    }
+  }
+}

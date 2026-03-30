@@ -1,0 +1,1 @@
+FacebookSdk.setAutoLogAppEventsEnabled(true);

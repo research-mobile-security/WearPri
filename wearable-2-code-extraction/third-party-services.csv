@@ -1,0 +1,131 @@
+﻿id,third_party,manifest,source_code,stop_share,link,RAG
+1,google firebase ,yes,yes,yes,https://firebase.google.com/docs/cloud-messaging/android/client?hl=en#prevent-auto-init,done
+2,facebook ,yes,yes ,yes,https://developers.facebook.com/docs/app-events/gdpr-compliance/,done
+3,cleverTap ,yes,yes ,yes,https://developer.clevertap.com/docs/sdk-changes-for-gdpr-compliance,done
+4,zendesk ,no,no,no,https://developer.zendesk.com/documentation/,
+5,yandex ,no,no,no,https://appmetrica.yandex.com/docs/en/data-security/gdpr,
+6,appLovin ,no,yes,yes,https://developers.applovin.com/en/max/android/overview/privacy/,done
+7,huawei ,no,no,no,https://developer.huawei.com/consumer/en/doc/AppGallery-connect-Guides/agc-apm-android-sdksecurity-0000001053087275,
+8,kochava,no,yes,yes,https://support.kochava.com/sdk-integration/android-sdk-integration/android-using-the-sdk/,done
+9,flurry,no,no,no,https://www.flurry.com/ccpa-compliance-guide/,
+10,braze ,yes,yes,yes,"https://www.braze.com/docs/developer_guide/sdk_integration
+https://www.braze.com/docs/user_guide/data/user_data_collection/sdk_data_collection/#data-not-collected-by-default",done
+11,sentry ,no,yes,yes,"https://docs.sentry.io/platforms/android/configuration/options/
+https://docs.sentry.io/platforms/android/data-management/sensitive-data/",done
+12,appsflyer,no,yes,yes,https://dev.appsflyer.com/hc/docs/preserve-user-privacy-android,done
+13,vungle ,no,yes,yes,https://support.vungle.com/hc/en-us/articles/360047780372-Advanced-Settings#ccpa-implementation-0-9,done
+14,baidu ,no,yes,yes,https://lbsyun.baidu.com/faq/api?title=android-privacy,done
+15,urban airship ,no,yes,yes,"https://docs.airship.com/platform/mobile/data-collection/data-collection/?groupid=android-kotlin
+https://docs.airship.com/reference/libraries/android/latest/reference/com/urbanairship/PrivacyManager.html",done
+16,branch ,no,yes,yes,https://help.branch.io/developers-hub/docs/consumer-protection-preferences,done
+17,ironsource ,no,yes,yes,https://developers.is.com/ironsource-mobile/android/regulation-advanced-settings/#step-1,done
+18,picasso,no,no,no,https://square.github.io/picasso/#introduction,
+19,ogury ,no,yes,yes,https://support.ogury.com/android/privacy/privacy-compliance,done
+20,amap,no,no,no,https://s3-smartwear.tozostore.com/web_page/AMAP_privacy_policy_en.html,
+21,sensorsdata,no,no,no,https://www.sensorsdata.cn/2.0/manual/android_sdk.html,
+22,intercom ,no,no,no,https://developers.intercom.com/installing-intercom/android/about-the-sdk,
+23,pangle bytedance ,no,no,no,https://www.pangleglobal.com/integration/app-privacy-details-gp,
+24,tencent ,no,no,no,https://developers.adnet.qq.com/doc/android/union/union_embed,
+25,iguang jpush ,no,no,no,https://docs.jiguang.cn/en/jpush/client/Android/android_sdk/,
+26,salesforce,no,no,no,https://developer.salesforce.com/docs/atlas.en-us.service_sdk_android.meta/service_sdk_android/servicesdk_android_dev_guide.htm,
+27,moengage,no,yes,yes,https://developers.moengage.com/hc/en-us/articles/4403894239892-Compliance,done
+28,expo,no,no,no,https://docs.expo.dev/guides/permissions/,
+29,razorpay ,no,no,no,https://razorpay.com/docs/payments/payment-gateway/android-integration/standard/google-data-safety/,
+30,getstream,no,no,no,https://getstream.io/chat/docs/android/gdpr/,
+31,mapbox,no,no,no,https://www.mapbox.com/legal/privacy,
+32,transistorsoft ,no,no,no,https://transistorsoft.github.io/cordova-background-geolocation-lt/,
+33,Instabug,no,yes,yes,https://docs.instabug.com/docs/gdpr,done
+34,zoho salesiq,no,no,no,https://www.zoho.com/salesiq/help/developer-guides/android-mobile-sdk-installation-2.0.html,
+35,zoom,no,no,no,https://www.zoom.com/en/trust/privacy/,
+36,pushwoosh,no,yes,yes,https://github.com/Pushwoosh/pushwoosh-android-sdk/blob/master/Documentation/GDPRManager.md,done
+37,bugsnag ,yes,yes,yes,https://docs.bugsnag.com/platforms/android/configuration-options/#autotracksessions,done
+38,onesignal,no,yes,yes,https://documentation.onesignal.com/docs/handling-personal-data,done
+39,shakebugs,no,no,no,https://docs.shakebugs.com/docs/android/configuration-and-data/manage-sensitive-data/,
+40,adjoe,no,no,no,https://docs.adjoe.io/adjoe-sdk/android/playtime-sdk-for-android/faq,
+41,smaato,no,yes,yes,https://developers.smaato.com/publishers/android-nextgen-sdk-integration/#NextGenSDK|Android|Smaatoasprimary-ImportantDetailsAboutLGPDUserConsent,done
+42,stripe,no,no,no,https://docs.stripe.com/sdks/android,
+43,brightcove,no,no,no,https://sdks.support.brightcove.com/android/index.html,
+44,repro,yes,no,yes,https://docs.repro.io/en/dev/sdk/device-id.html#id,done
+45,Amazon Device Messaging,no,no,no,https://developer.amazon.com/docs/adm/integrate-your-app.html#update-your-app-manifest,
+46,plaid,no,no,no,https://plaid.com/legal/#end-user-privacy-policy,
+47,batch,yes,yes,yes,https://doc.batch.com/developer/sdk/android/data-privacy/data-collection,done
+48,Taboola,no,yes,yes,https://developers.taboola.com/taboolasdk/docs/android-sdk-classic-user-consent,done
+49,Smart AdServer ,no,yes,yes ,https://documentation.smartadserver.com/instreamSDK/android/gettingstarted.html,done
+50,Infobip,no,no,no,https://www.infobip.com/docs/mobile-app-messaging/getting-started#create-enable-mobile-application-profile,
+51,Adjust,no,yes,yes,https://dev.adjust.com/en/sdk/android/features/privacy,done
+52,Samsung Health,no,yes,yes,https://developer.samsung.com/health/android/data/guide/privacy.html,done
+53,Kakao,no,yes,yes,https://developers.kakao.com/docs/latest/en/kakaologin/android#revoke-consent,done
+54,Heap Analytics,no,yes,yes,https://developers.heap.io/docs/android-custom-configuration,done
+55,SendBird,no,no,no,https://sendbird.com/docs/chat/sdk/v4/android/channel/overview-channel,
+56,Digital Turbine,no,yes,yes,"https://developer.digitalturbine.com/hc/en-us/articles/6837837795741-Google-s-Data-Safety-Form
+https://developer.digitalturbine.com/hc/en-us/articles/16605723967132-SDK-Plugin-APIs",done
+57,PubNative,no,yes,yes,https://developers.verve.com/reference/hybid-android-configuration,done
+58,Unity Ads,no,yes,yes,https://docs.unity.com/ads/en-us/manual/GDPRCompliance#Custom_consent_implementation_using_Developer_Consent_API,done
+59,Moovit,no,no,no,https://moovit.com/legals/privacy-policy/,
+60,Tasker,no,no,no,https://tasker.joaoapps.com/privacy.html,
+61,Braintree,no,yes,yes,https://github.com/braintree/braintree_android/blob/main/v5_MIGRATION_GUIDE.md#data-collector,done
+62,Iterable,no,yes,yes,https://support.iterable.com/hc/en-us/articles/360035395671-Tracking-Events-and-Purchases-with-Iterable-s-Mobile-SDKs,done
+63,Forter,no,no,no,https://docs.forter.com/docs/mobile-sdks-overview,
+64,New Relic,no,yes,yes,https://docs.newrelic.com/docs/mobile-monitoring/new-relic-mobile/mobile-sdk/configure-settings/,done
+65,Usabilla ,no,no,no,https://github.com/usabilla/usabilla-u4a-android-sdk,
+66,Mixpanel ,yes,yes,yes,https://docs.mixpanel.com/docs/tracking-methods/sdks/android#privacy-friendly-tracking,done
+67,MobileFuse,no,yes,yes,https://docs.mobilefuse.com/docs/android-sdk-data-privacy,done
+68,chartbeat,no,yes,yes,https://docs.chartbeat.com/cbp/tracking/mobile-app-sdks/android-sdk#ip-truncation,done
+69,RevenueCat,no,no,no,https://www.revenuecat.com/docs/platform-resources/google-platform-resources/google-plays-data-safety,
+70,truecaller,no,no,no,https://www.truecaller.com/privacy/gdpr,
+71,swrve ,yes,yes,yes,"https://docs.swrve.com/developer-documentation/integration/android/
+https://docs.swrve.com/developer-documentation/integration/user-acquisition-tracking-guide/",done
+72,ByteDance OpenAds,no,no,no,https://github.com/bytedance/tiktok-business-android-sdk,
+73,Adobe,no,yes,yes,"https://developer.adobe.com/client-sdks/resources/privacy-and-gdpr/
+https://developer.adobe.com/client-sdks/previous-versions/documentation/privacy-and-gdpr/",done
+74,Radar,no,no,no,https://docs.radar.com/sdk/android,
+75,Naver ,no,yes,yes,https://naver.github.io/nam-sdk-guide/en/android/advanced/global_privacy/,done
+76,Nuance,no,no,no,https://docs-sdk-android.nod-glb.nuance.com/dcapi.html,
+77,Adyen ,no,yes,yes,https://docs.adyen.com/online-payments/analytics-and-data-tracking/?tab=android_2_3#configure,done
+78,HyprMX (Amazon),no,yes,yes,https://documentation.hyprmx.com/android-sdk/getting-started/privacy,done
+79,Blueshift ,no,yes,yes,https://developer.blueshift.com/docs/get-started-with-the-android-sdk,done
+80,optimizely,no,yes,yes,https://docs.developers.optimizely.com/feature-experimentation/docs/implement-a-user-profile-service-android#no-op-in-android,done
+81,AppBrain ,no,no,no,https://www.appbrain.com/info/help/privacy/index.html,
+82,SuperAwesome,no,no,no,https://sdks.superawesome.com/docs/data-collection,
+83,inmobi ,no,no,no,https://support.inmobi.com/monetize/data-identity/unifid/unifid-sample-android-integration,
+84,Tappx,no,no,no,https://www.tappx.com/docs/android/privacy-compliance,
+85,Leanplum,no,no,no,https://docs.leanplum.com/reference/tracking-monetization-events,
+86,LaunchDarkly,no,no,no,https://launchdarkly.com/docs/sdk/features/app-config#expand-android-code-sample,
+87,Datadog,no,no,no,https://docs.datadoghq.com/data_security/logs/,
+88,Chartboost,no,yes,yes,https://docs.chartboost.com/en/monetization/integrate/android/sdk-privacy-methods/,done
+89,Agora,no,no,no,https://docs.agora.io/en/agora-analytics/reference/security,
+90,MParticle,no,yes,yes,https://docs.mparticle.com/developers/client-sdks/android/opt-out/,done
+91,UXCam,no,yes,yes,https://developer.uxcam.com/docs/opt-in-opt-out,done
+92,Bitmovin,no,no,no,https://developer.bitmovin.com/playback/docs/getting-started-android,
+93,LogRocket,no,yes,yes,https://docs.logrocket.com/reference/android-redact-view,done
+94,ACRA,yes,yes,yes,https://www.acra.ch/docs/AdvancedUsage,done
+95,Smartlook,yes,yes,yes,https://mobile.developer.smartlook.com/reference/android-sensitive-data-hiding#sensitivity,done
+96,Validic ,no,no,no,https://helpdocs.validic.com/docs/android-native-sdk,
+97,StartApp,no,no,no,https://support.start.io/hc/en-us/articles/4413793394962-Google-Play-Safety-Section-Data-Disclosure#data_collected_and_shared_automatically,
+98,Notifee,no,no,no,https://notifee.app/react-native/docs/android/introduction,
+99,BidMachine,no,no,no,https://docs.bidmachine.io/docs/app-privacy-details-on-the-google-play,
+100,Singular,no,yes,yes,https://support.singular.net/hc/en-us/articles/35834486657691-Data-Privacy?navigation_side_bar=true,done
+101,Contentsquare ,no,yes,yes,https://docs.contentsquare.com/en/android/privacy/,done
+102,Appodeal,no,no,no,https://docs.appodeal.com/android/data-protection/app-privacy-details,
+103,Optimove,no,no,no,https://docs.appodeal.com/android/data-protection/app-privacy-details,
+104,Lokalise,no,no,no,https://developers.lokalise.com/docs/android-sdk-v2#user-privacy,
+105,Localytics,no,yes,yes,https://help.uplandsoftware.com/localytics/dev/android.html#privacy,done
+106,Pushy,no,no,no,https://pushy.me/docs/android/create-app,
+107,CustomerIO,no,yes,yes,https://docs.customer.io/sdk/android/tracking/identify/,done
+108,Freshchat,no,no,no,https://developers.freshchat.com/mobile/#getting-started,
+109,Survicate,no,no,no,https://developers.survicate.com/mobile-sdk/android/,
+110,Sinch,no,no,no,https://developers.sinch.com/docs/in-app-calling/android-cloud/,
+111,Adapty,no,no,no,https://adapty.io/docs/google-play-data-safety#data-usage-and-handling,
+112,CometChat,no,no,no,https://www.cometchat.com/docs/sdk/android/setup,
+113,blitzllama,no,no,no,https://documentation.blitzllama.com/sdk/android,
+114,Cybersource,no,no,no,https://developer.cybersource.com/docs/nab/en-us/payer-auth/developer/all/rest/payer-auth/pa-sdk-intro/pa-sdk-android-intro.html,
+115,Rollbar,no,no,no,https://docs.rollbar.com/docs/security,
+116,HERE,no,no,no,https://www.here.com/docs/bundle/sdk-for-android-explore-developer-guide/page/README.html,
+117,Heytap Push,no,no,no,https://muc.heytap.com/document/heytap/accountPolicyUpdate/accountSDK/privacyPolicySdk_en-US.html#policy_2,
+118,Matomo,no,no,no,https://matomo.org/blog/2020/01/your-introduction-to-personally-identifiable-information-what-is-pii/#elementor-toc__heading-anchor-0,
+119,Dexcom,no,no,no,https://developer.dexcom.com/docs/,
+120,Vuforia ,no,no,no,https://developer.vuforia.com/library/vuforia-engine/data-security/vuforia-engine-data-security/,
+121,Appier,no,no,no,https://docs.aps.appier.com/docs/sdk,
+122,Sailthru,no,yes,yes,https://sdkdevelopers.meetmarigold.com/docs/collecting-user-data,done
+123,Klaviyo,no,no,no,https://developers.klaviyo.com/en/reference/data_privacy_api_overview,
+124,Parse,no,no,no,https://docs.parseplatform.org/android/guide/#analytics,

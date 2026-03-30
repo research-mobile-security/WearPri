@@ -1,0 +1,119 @@
+{
+  "Calendar_FullLeak": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Calendar_FullLeak",
+      "detail": "Calendar/event data leaking to IPC/Network/File/Log/SharedPreferences",
+      "category": "ComplianceInfo",
+      "complianceCategory": "Calendar",
+      "complianceCategoryDetail": "titles, times, locations, notes, reminders",
+      "level": "L4"
+    },
+    "source": {
+      "Field": [
+        "<android.provider.CalendarContract: android.net.Uri CONTENT_URI>",
+        "<android.provider.CalendarContract$Events: android.net.Uri CONTENT_URI>",
+        "<android.provider.CalendarContract$Reminders: android.net.Uri CONTENT_URI>",
+        "<android.provider.CalendarContract$Instances: android.net.Uri CONTENT_URI>",
+        "<android.provider.CalendarContract$Attendees: android.net.Uri CONTENT_URI>",
+        "<android.provider.CalendarContract$Calendars: android.net.Uri CONTENT_URI>"
+      ],
+      "Return": [
+        "<android.database.Cursor: java.lang.String getString(*)>",
+        "<android.database.Cursor: long getLong(*)>",
+        "<android.database.Cursor: int getInt(*)>"
+      ]
+    },
+    "sink": {
+      "<android.content.Intent: * putExtra(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String",
+          "android.os.Parcelable",
+          "java.io.Serializable",
+          "android.os.Bundle",
+          "java.lang.String[]",
+          "int",
+          "long",
+          "boolean",
+          "byte[]",
+          "char[]",
+          "short[]",
+          "float[]",
+          "double[]"
+        ],
+        "TaintCheck": ["p*"]
+      },
+      "<*: * sendBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["android.content.Intent", "android.content.Intent[]", "*"],
+        "TaintCheck": ["p*"]
+      },
+      "<*: * sendOrderedBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["android.content.Intent", "android.content.Intent[]", "*"],
+        "TaintCheck": ["p*"]
+      },
+
+      "<android.content.ContentResolver: * insert(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<android.content.ContentResolver: * update(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+
+      "<android.webkit.WebView: * loadUrl(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String"],
+        "TaintCheck": ["p*"]
+      },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<okhttp3.Call: * enqueue(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["okhttp3.Callback"],
+        "TaintCheck": ["p*"]
+      },
+      "<okhttp3.Call: * execute()>": {
+        "LibraryOnly": true,
+        "TaintCheck": ["@this"]
+      },
+
+      "<android.util.Log: int *(java.lang.String,java.lang.String)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String", "java.lang.String"],
+        "TaintCheck": ["p1"]
+      },
+
+      "<java.io.FileOutputStream: * <init>(*)>": {
+        "TaintParamType": ["java.io.File", "*"],
+        "TaintCheck": ["p*", "@this"]
+      },
+      "<java.io.FileOutputStream: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<java.io.FileWriter: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+
+      "<android.content.SharedPreferences$Editor: * putString(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String", "*"],
+        "TaintCheck": ["p*"]
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "Financial_Network": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Financial_Network",
+      "detail": "Financial info leaking to Network",
+      "category": "ComplianceInfo",
+      "complianceCategory": "Financial",
+      "complianceCategoryDetail": "Network",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.webkit.WebView: java.lang.String getOriginalUrl()>"
+      ]
+    },
+    "sink": {
+      "<android.webkit.WebView: * loadUrl(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<okhttp3.Call: * enqueue(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "okhttp3.Callback"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<java.io.FileOutputStream: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<java.io.FileWriter: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<android.content.SharedPreferences$Editor: * putString(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      }
+    }
+  }
+}

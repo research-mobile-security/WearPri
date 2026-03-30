@@ -1,0 +1,1 @@
+<receiver android:name="com.swrve.sdk.SwrveInstallReferrerReceiver" tools:node="remove"/>

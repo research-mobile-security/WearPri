@@ -1,0 +1,90 @@
+{
+  "Audio_FullLeak": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Audio_FullLeak",
+      "detail": "Audio data/files leaking to File/Network/IPC",
+      "category": "ComplianceInfo",
+      "complianceCategory": "Audio",
+      "complianceCategoryDetail": "raw audio buffers, media URIs, recorder outputs",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.media.MediaRecorder: int getMaxAmplitude()>",
+        "<android.media.AudioRecord: int read(*)>",
+        "<android.media.MediaRecorder: * *(*)>",
+        "<android.content.ContentResolver: java.io.InputStream openInputStream(android.net.Uri)>"
+      ],
+      "Param": {
+        "<android.media.AudioRecord: int read(byte[],int,int)>": ["p0"],
+        "<android.media.AudioRecord: int read(short[],int,int)>": ["p0"],
+        "<android.media.AudioRecord: int read(java.nio.ByteBuffer,int)>": ["p0"]
+      },
+      "Field": [
+        "<android.provider.MediaStore$Audio$Media: android.net.Uri EXTERNAL_CONTENT_URI>"
+      ]
+    },
+    "sink": {
+      "<java.io.FileOutputStream: * <init>(*)>": {
+        "TaintParamType": ["java.io.File","*"],
+        "TaintCheck": ["p*","@this"]
+      },
+      "<java.io.FileOutputStream: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<java.io.FileWriter: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+
+      "<android.webkit.WebView: * loadUrl(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["java.lang.String"],
+        "TaintCheck": ["p*"]
+      },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["*"],
+        "TaintCheck": ["p*"]
+      },
+      "<okhttp3.Call: * enqueue(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["okhttp3.Callback"],
+        "TaintCheck": ["p*"]
+      },
+      "<okhttp3.Call: * execute()>": {
+        "LibraryOnly": true,
+        "TaintCheck": ["@this"]
+      },
+
+      "<android.content.Intent: * putExtra(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String",
+          "android.os.Parcelable",
+          "java.io.Serializable",
+          "android.os.Bundle",
+          "java.lang.String[]",
+          "byte[]"
+        ],
+        "TaintCheck": ["p*"]
+      },
+      "<*: * sendBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["android.content.Intent","android.content.Intent[]","*"],
+        "TaintCheck": ["p*"]
+      },
+      "<*: * sendOrderedBroadcast*(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": ["android.content.Intent","android.content.Intent[]","*"],
+        "TaintCheck": ["p*"]
+      }
+    }
+  }
+}

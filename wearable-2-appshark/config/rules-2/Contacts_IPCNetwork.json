@@ -1,0 +1,107 @@
+{
+  "Contacts_IPCNetwork": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Contacts_IPCNetwork",
+      "detail": "Contacts leaking to IPC/Network",
+      "category": "ComplianceInfo",
+      "complianceCategory": "Contacts",
+      "complianceCategoryDetail": "IPC/Network",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.provider.CallLog$Calls: android.net.Uri CONTENT_URI>",
+        "<android.provider.ContactsContract$Contacts: android.net.Uri CONTENT_URI>"
+      ]
+    },
+    "sink": {
+      "<android.content.Intent: * putExtra(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String",
+          "android.os.Parcelable",
+          "java.io.Serializable",
+          "android.os.Bundle"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<android.content.ContentResolver: * insert(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<android.content.ContentResolver: * update(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<android.webkit.WebView: * loadUrl(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "java.lang.String"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<org.apache.http.impl.client.DefaultHttpClient: * execute(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<okhttp3.Call: * enqueue(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "okhttp3.Callback"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<java.io.FileOutputStream: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<java.io.FileWriter: * write(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      },
+      "<android.content.SharedPreferences$Editor: * putString(*)>": {
+        "LibraryOnly": true,
+        "TaintParamType": [
+          "*"
+        ],
+        "TaintCheck": [
+          "p*"
+        ]
+      }
+    }
+  }
+}

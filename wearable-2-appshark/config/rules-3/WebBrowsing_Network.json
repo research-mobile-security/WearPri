@@ -1,0 +1,26 @@
+{
+  "WebBrowsing_Network": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "WebBrowsing_Network",
+      "detail": "Cache/cookies/web data leaking to Network/IPC/Log",
+      "category": "ComplianceInfo",
+      "complianceCategory": "WebBrowsing",
+      "complianceCategoryDetail": "cache/cookies",
+      "level": "L3"
+    },
+    "source": {
+      "Return": [
+        "<android.webkit.CookieManager: java.lang.String getCookie(java.lang.String)>",
+        "<android.webkit.WebView: java.lang.String getUrl()>"
+      ]
+    },
+    "sink": {
+      "<android.util.Log: int *(java.lang.String,java.lang.String)>": { "LibraryOnly": true, "TaintCheck": ["p1"] },
+      "<okhttp3.Call: * enqueue(*)>":                                  { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.Intent: * putExtra(*)>":                       { "LibraryOnly": true, "TaintCheck": ["p*"] }
+    }
+  }
+}

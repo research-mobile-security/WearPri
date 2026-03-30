@@ -1,0 +1,12 @@
+.env
+*.json
+*.log
+*.faiss
+*.pkl
+*.txt
+*.zip
+!requirements.txt
+!google-sdk-index.txt
+!command.txt
+# Exclude .txt files in the output directory
+!output/*.txt

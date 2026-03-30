@@ -1,0 +1,7 @@
+{
+  "apkPath": "F:/wearable-2-appshark/wearable-app/ie.zappy.fennec.barbellqueenfitness.apk",
+  "out": "F:/wearable-2-appshark/appshark-output/app-non-standalone/ie.zappy.fennec.barbellqueenfitness.apk",
+  "rulePath": "C:/Users/ASUS/anaconda3-project-code/wearable-2-appshark/config/rules-2",
+  "logLevel": 1,
+  "javaSource": true
+}

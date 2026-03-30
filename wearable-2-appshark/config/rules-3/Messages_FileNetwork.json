@@ -1,0 +1,31 @@
+{
+  "Messages_FileNetwork": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Messages_FileNetwork",
+      "detail": "Messages content leaking to File/Network/IPC",
+      "category": "ComplianceInfo",
+      "complianceCategory": "Messages",
+      "complianceCategoryDetail": "sms/mms/chat",
+      "level": "L4"
+    },
+    "source": {
+      "Return": [
+        "<android.database.Cursor: * getString(*)>",
+        "<android.provider.Telephony$Sms: android.net.Uri CONTENT_URI>",
+        "<android.provider.Telephony$Mms: android.net.Uri CONTENT_URI>"
+      ],
+      "Field": [
+        "<android.provider.Telephony$Sms: android.net.Uri CONTENT_URI>",
+        "<android.provider.Telephony$Mms: android.net.Uri CONTENT_URI>"
+      ]
+    },
+    "sink": {
+      "<java.io.FileOutputStream: * <init>(*)>":                       { "TaintCheck": ["p*","@this"] },
+      "<okhttp3.Call: * enqueue(*)>":                                  { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<android.content.Intent: * putExtra(*)>":                       { "LibraryOnly": true, "TaintCheck": ["p*"] }
+    }
+  }
+}

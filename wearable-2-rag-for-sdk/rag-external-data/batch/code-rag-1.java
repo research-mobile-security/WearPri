@@ -1,0 +1,1 @@
+Batch.optOutAndWipeData(context);

@@ -1,0 +1,20 @@
+public class TempClass {
+    public static void dummyMethod() {
+        withAnalyticsEvents(false)
+        NewRelic.disableFeature(FeatureFlag.AnalyticsEvents)
+        NewRelic.disableFeature(FeatureFlag.AppStartMetrics)
+        NewRelic.disableFeature(FeatureFlag.BackgroundReporting)
+        NewRelic.disableFeature(FeatureFlag.HandledExceptions)
+        NewRelic.disableFeature(FeatureFlag.NativeReporting)
+        NewRelic.disableFeature(FeatureFlag.DistributedTracing)
+        NewRelic.disableFeature(FeatureFlag.EventPersistence)
+        NewRelic.disableFeature(FeatureFlag.FedRampEnabled)
+        NewRelic.disableFeature(FeatureFlag.InteractionTracing)
+        NewRelic.disableFeature(FeatureFlag.DefaultInteractions)
+        withLoggingEnabled(false)
+        NewRelic.disableFeature(FeatureFlag.NetworkRequests)
+        NewRelic.disableFeature(FeatureFlag.NetworkErrorRequests)
+        NewRelic.disableFeature(FeatureFlag.HttpResponseBodyCaptureEnabled)
+        NewRelic.disableFeature(FeatureFlag.OfflineStorage)
+    }
+}

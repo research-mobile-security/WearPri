@@ -1,0 +1,15 @@
+.env
+*.json
+*.log
+*.faiss
+*.pkl
+*.txt
+*.zip
+vectorDB
+vectorDB/*
+!requirements.txt
+!command.txt
+!rag-external-data/*
+!rag-external-data-bk/*
+# Exclude .txt files in the output directory
+!output/*.txt

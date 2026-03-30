@@ -1,0 +1,24 @@
+{
+  "Calendar_IPCNetwork": {
+    "SliceMode": true,
+    "traceDepth": 12,
+    "PrimTypeAsTaint": true,
+    "desc": {
+      "name": "Calendar_IPCNetwork",
+      "detail": "Calendar event data leaking to IPC/Network",
+      "category": "ComplianceInfo",
+      "complianceCategory": "Calendar",
+      "complianceCategoryDetail": "event title/time/etc.",
+      "level": "L3"
+    },
+    "source": {
+      "Field": [
+        "<android.provider.CalendarContract: android.net.Uri CONTENT_URI>"
+      ]
+    },
+    "sink": {
+      "<android.content.Intent: * putExtra(*)>": { "LibraryOnly": true, "TaintCheck": ["p*"] },
+      "<okhttp3.Call: * enqueue(*)>":            { "LibraryOnly": true, "TaintCheck": ["p*"] }
+    }
+  }
+}

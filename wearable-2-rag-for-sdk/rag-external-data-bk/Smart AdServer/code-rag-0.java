@@ -1,0 +1,1 @@
+SASConfiguration.getSharedInstance().setAutomaticLocationAllowed(true);
