@@ -20,5 +20,5 @@ Overall, WearPri supports app stores and auditors in proactively screening weara
 
 
 WearPri architecture illustrated as figure below
-<img src="https://github.com/research-mobile-security/WearPri/blob/main/project-image/figure-architecture-2.png">
+<img src="https://github.com/research-mobile-security/WearPri/blob/master/project-image/figure-architecture-2.png">
 
